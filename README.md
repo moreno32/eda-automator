@@ -1,57 +1,57 @@
 # EDA Automator
 
-Un paquete para automatizar el análisis exploratorio de datos (EDA) y generar reportes interactivos en varios formatos.
+A package to automate Exploratory Data Analysis (EDA) and generate interactive reports in various formats.
 
-## Características
+## Features
 
-- **Análisis automático** de conjuntos de datos tabulares
-- **Visualizaciones interactivas** para explorar patrones en los datos
-- **Reportes en múltiples formatos**: HTML, Markdown, Excel, e imágenes
-- **Interfaz de línea de comandos** para análisis rápidos
-- **API Python** para integración en flujos de trabajo existentes
-- **Modular y extensible** para personalizar el análisis
+- **Automated analysis** of tabular datasets
+- **Interactive visualizations** to explore patterns in the data
+- **Multiple report formats**: HTML, Markdown, Excel, and images
+- **Command-line interface** for quick analysis
+- **Python API** for integration into existing workflows
+- **Modular and extensible** for customized analysis
 
-## Instalación
+## Installation
 
 ```bash
-# Instalación básica
+# Basic installation
 pip install eda-automator
 
-# Con todas las dependencias para generación de imágenes
+# With all dependencies for image generation
 pip install eda-automator[image]
 ```
 
-## Uso rápido
+## Quick Usage
 
-### Desde línea de comandos
+### From Command Line
 
 ```bash
-# Analizar un dataset y generar reporte HTML
+# Analyze a dataset and generate HTML report
 eda-automator analyze data.csv --output reports
 
-# Generar reportes en múltiples formatos
+# Generate reports in multiple formats
 eda-automator analyze data.csv --formats html markdown landscape excel
 
-# Generar un dataset sintético para pruebas
+# Generate a synthetic dataset for testing
 eda-automator generate --size 1000 --output test_data.csv
 ```
 
-### Desde Python
+### From Python
 
 ```python
 import pandas as pd
 from eda_automator import EDAAutomator, run_analysis
 
-# Cargar datos
+# Load data
 df = pd.read_csv('data.csv')
 
-# Método simplificado
+# Simplified method
 eda = run_analysis(df, target_variable='target')
 
-# Generar reporte
+# Generate report
 eda.generate_html_report('report.html')
 
-# O usar la clase EDAAutomator para más control
+# Or use the EDAAutomator class for more control
 eda = EDAAutomator(df)
 eda.run_basic_analysis()
 eda.run_missing_analysis()
@@ -60,9 +60,9 @@ eda.run_correlation_analysis()
 eda.generate_html_report('custom_report.html')
 ```
 
-## Módulo Unificado
+## Unified Module
 
-El paquete incluye un módulo unificado que simplifica el proceso de análisis:
+The package includes a unified module that simplifies the analysis process:
 
 ```python
 from eda_automator.unified import (
@@ -76,133 +76,133 @@ from eda_automator.unified.report_generators import (
     generate_markdown_report
 )
 
-# Configurar el entorno (opcional)
-setup_environment(language='es')
+# Configure environment (optional)
+setup_environment(language='en')
 
-# Cargar o generar datos
-df = load_data('data.csv')  # o create_dataset(size=1000)
+# Load or generate data
+df = load_data('data.csv')  # or create_dataset(size=1000)
 
-# Analizar los datos
+# Analyze the data
 eda = run_analysis(df, target_variable='target')
 
-# Generar reportes
+# Generate reports
 generate_html_report('report.html', eda)
 generate_markdown_report('report.md', eda)
 ```
 
-## Dependencias Opcionales
+## Optional Dependencies
 
-Para generar reportes en formato imagen, instale una de las siguientes combinaciones:
+To generate reports in image format, install one of the following combinations:
 
-- `imgkit` + `wkhtmltopdf` (recomendado): `pip install imgkit`
-- `selenium` + `webdriver para Chrome`: `pip install selenium webdriver-manager`
+- `imgkit` + `wkhtmltopdf` (recommended): `pip install imgkit`
+- `selenium` + `Chrome webdriver`: `pip install selenium webdriver-manager`
 - `weasyprint` + `pdf2image`: `pip install weasyprint pdf2image`
 
-## Contribución
+## Contribution
 
-Las contribuciones son bienvenidas. Por favor, abra un issue o pull request.
+Contributions are welcome. Please open an issue or pull request.
 
-## Licencia
+## License
 
 MIT License
 
-## 🌟 Características
+## 🌟 Key Features
 
-- **Análisis Automático**: Detecta y analiza automáticamente características importantes de tus datos.
-- **Visualizaciones de Alta Calidad**: Genera gráficos y visualizaciones informativas para datos categóricos y numéricos.
-- **Informes Multi-formato**: Crea informes en HTML, Markdown o imagen.
-- **Estructura Modular**: Arquitectura modular para facilitar la extensión y personalización.
-- **Detección Inteligente**: Identificación automática de outliers, relaciones y patrones.
+- **Automated Analysis**: Automatically detects and analyzes important features of your data.
+- **High-Quality Visualizations**: Generates informative charts and visualizations for categorical and numerical data.
+- **Multi-format Reports**: Creates reports in HTML, Markdown, or image formats.
+- **Modular Structure**: Modular architecture for easy extension and customization.
+- **Intelligent Detection**: Automatic identification of outliers, relationships, and patterns.
 
-## 🚀 Instalación
+## 🚀 Installation
 
 ```bash
 pip install eda-automator
 ```
 
-## 📊 Uso Rápido
+## 📊 Quick Start
 
-### Enfoque Modular (Recomendado)
+### Modular Approach (Recommended)
 
 ```python
 from eda_automator import EDAAutomator
 import pandas as pd
 
-# Cargar tus datos
-df = pd.read_csv('mi_dataset.csv')
+# Load your data
+df = pd.read_csv('my_dataset.csv')
 
-# Crear una instancia de EDA Automator
-eda = EDAAutomator(df, target_variable='mi_variable_objetivo')
+# Create an EDA Automator instance
+eda = EDAAutomator(df, target_variable='my_target_variable')
 
-# Ejecutar análisis completo
+# Run complete analysis
 eda.run_full_analysis()
 
-# Generar informe
-eda.generate_report('informe_eda.html', format='html')
+# Generate report
+eda.generate_report('eda_report.html', format='html')
 ```
 
-### Enfoque mediante Línea de Comandos
+### Command Line Approach
 
 ```bash
-# Ejemplo básico con dataset sintético
+# Basic example with synthetic dataset
 python examples/unified_eda_modular.py --size 1000 --formats html
 
-# Especificar tipo de datos y directorio de salida
-python examples/unified_eda_modular.py --data-type timeseries --output output/mi_informe
+# Specify data type and output directory
+python examples/unified_eda_modular.py --data-type timeseries --output output/my_report
 
-# Ver opciones disponibles
+# View available options
 python examples/unified_eda_modular.py --help
 ```
 
-## 📝 Ejemplos
+## 📝 Examples
 
-### Jupyter Notebook de Inicio Rápido
-Consulta el [notebook de inicio rápido](examples/notebooks/quickstart.ipynb) para obtener ejemplos prácticos.
+### Quick Start Jupyter Notebook
+Check out the [quickstart notebook](examples/notebooks/quickstart.ipynb) for practical examples.
 
-### Ejemplos de Línea de Comandos
-Prueba los scripts de ejemplo en el directorio `examples/`:
+### Command Line Examples
+Try the example scripts in the `examples/` directory:
 
 ```bash
 python examples/unified_eda_modular.py --formats html markdown --size 1000
 ```
 
-## 🧩 Estructura del Proyecto
+## 🧩 Project Structure
 
 ```
-eda_automator/                 # Paquete principal
-├── unified/                   # Módulo unificado centralizado
-│   ├── report_generators/     # Generadores de reportes unificados
-│   ├── __init__.py            # Inicialización del módulo unificado
-│   ├── analysis.py            # Análisis de datos
-│   ├── config.py              # Configuración
-│   ├── data.py                # Manejo de datos
-│   ├── dependencies.py        # Verificación de dependencias
-│   ├── main.py                # Funcionalidad principal
-│   ├── utils.py               # Utilidades
-│   └── visualizations.py      # Visualizaciones
-├── report_generators/         # Generadores de reportes clásicos
-├── __init__.py                # Inicialización del paquete
-├── bivariate.py               # Análisis bivariado
-├── cli.py                     # Interfaz de línea de comandos
-├── data_quality.py            # Análisis de calidad de datos
-├── multivariate.py            # Análisis multivariado
-├── report.py                  # Generación de reportes
-├── stats_analysis.py          # Análisis estadístico
-├── univariate.py              # Análisis univariado
-├── utils.py                   # Funciones de utilidad
-└── visuals.py                 # Visualizaciones
+eda_automator/                 # Main package
+├── unified/                   # Centralized unified module
+│   ├── report_generators/     # Unified report generators
+│   ├── __init__.py            # Unified module initialization
+│   ├── analysis.py            # Data analysis
+│   ├── config.py              # Configuration
+│   ├── data.py                # Data handling
+│   ├── dependencies.py        # Dependency verification
+│   ├── main.py                # Main functionality
+│   ├── utils.py               # Utilities
+│   └── visualizations.py      # Visualizations
+├── report_generators/         # Classic report generators
+├── __init__.py                # Package initialization
+├── bivariate.py               # Bivariate analysis
+├── cli.py                     # Command line interface
+├── data_quality.py            # Data quality analysis
+├── multivariate.py            # Multivariate analysis
+├── report.py                  # Report generation
+├── stats_analysis.py          # Statistical analysis
+├── univariate.py              # Univariate analysis
+├── utils.py                   # Utility functions
+└── visuals.py                 # Visualizations
 
-examples/                      # Ejemplos de uso
-├── notebooks/                 # Notebooks de ejemplo
-├── unified_eda_modular.py     # Script de ejemplo para módulo unificado
-└── README.md                  # Documentación de ejemplos
+examples/                      # Usage examples
+├── notebooks/                 # Example notebooks
+├── unified_eda_modular.py     # Example script for unified module
+└── README.md                  # Examples documentation
 ```
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está licenciado bajo la licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Agradecimientos
+## 🙏 Acknowledgements
 
-- A todos los colaboradores y usuarios de EDA Automator.
-- A la comunidad de ciencia de datos por su continua inspiración y apoyo. 
+- To all contributors and users of EDA Automator.
+- To the data science community for their continued inspiration and support. 
