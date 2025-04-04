@@ -1,0 +1,20 @@
+# EDA Automator Configuration
+# Default thresholds and parameters
+
+# Data Quality Parameters
+missing_threshold: 0.2
+outlier_threshold: 3.0
+outlier_method: "z-score"  # Options: "z-score", "iqr"
+
+# Visualization Parameters
+categorical_threshold: 10  # Maximum unique values to treat as categorical
+max_unique_values: 20      # Maximum values to display in categorical charts
+sampling_threshold: 10000  # Sample data if rows exceed this number
+
+# Correlation Analysis
+correlation_threshold: 0.7  # Highlight correlations above this threshold
+correlation_method: "pearson"  # Options: "pearson", "spearman", "kendall"
+
+# Reporting
+report_format: "html"  # Options: "html", "markdown"
+include_code_snippets: true  # Include code to reproduce analysis

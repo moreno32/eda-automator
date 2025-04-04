@@ -1,0 +1,59 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: "EDA Automator Development Guidelines"
+globs: ["*.py"]
+alwaysApply: true
+---
+
+# Visualization Standards
+- "Always use COLOR_PALETTES from visuals.py for consistency across all visualizations"
+- "Select appropriate palette types: 'categorical' for categorical variables, 'sequential' for numerical data, and 'diverging' for data with a meaningful midpoint"
+- "Implement sampling when datasets exceed sampling_threshold using handle_large_dataset() function"
+- "Add sampling notes to visualizations using add_sampling_note() when data is sampled"
+- "Use stratified sampling for categorical variables to preserve distributions"
+
+# Code Structure
+- "Follow modular design principles - each module has a single responsibility"
+- "Import visualization utilities from visuals.py rather than duplicating functionality"
+- "Keep analysis logic separate from visualization code"
+- "Use utility functions from utils.py for common operations"
+- "Follow existing patterns when extending functionality"
+
+# Documentation
+- "Include NumPy-style docstrings for all functions and classes"
+- "Document parameters with types, descriptions, and default values"
+- "Provide usage examples for complex functions"
+- "Document return values with types and descriptions"
+- "Include references to related functions where appropriate"
+
+# Data Handling
+- "Validate input parameters using utility functions from utils.py"
+- "Handle missing values consistently across all analysis functions"
+- "Implement appropriate fallbacks when configuration values are invalid"
+- "Apply consistent outlier detection methods (z-score, IQR) as specified in config"
+- "Use proper error handling with descriptive error messages"
+
+# Performance
+- "Vectorize operations whenever possible instead of using loops"
+- "Apply sampling for large datasets in visualization functions"
+- "Use efficient data structures for repetitive operations"
+- "Avoid redundant calculations by caching intermediate results"
+- "Consider memory usage when working with large datasets"
+
+# Reporting
+- "Generate consistent HTML/Markdown reports using templates"
+- "Include data quality metrics in all reports"
+- "Add interpretations alongside visualizations in reports"
+- "Embed reproducible code snippets in reports when relevant"
+- "Ensure reports have a logical flow from data quality to advanced analysis"
+
+# Testing
+- "Write unit tests for all new functions"
+- "Include edge cases in test scenarios (empty datasets, all-null columns)"
+- "Test visualization functions with various dataset sizes"
+- "Verify that sampling behaves correctly with different thresholds"
+- "Ensure consistent appearance across all visualization types"

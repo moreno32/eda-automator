@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: "Optimized CI/CD and versioning rules for the EDA Automator project."
+globs: ["*.yml", "*.yaml", "*.py"]
+alwaysApply: true
+---
+
+# 1. Semantic Versioning
+- "Use major.minor.patch (e.g., 1.2.0). Increment the major version for breaking changes."
+- "Tag all releases in Git with the corresponding version for traceability."
+- "Update the CHANGELOG with each release to detail new features, changes, and fixes."
+
+# 2. CI/CD Pipelines
+- "Set up parallel jobs (lint, tests, coverage, build) in GitHub Actions or your chosen platform."
+- "Automatically trigger pipelines for all pushes and pull requests targeting the main branch."
+- "Surface linting or unit test failures early to avoid merging broken code."
+
+# 3. Test Coverage
+- "Enforce a coverage threshold (>=80%). Reject or flag merges that drop coverage below this level."
+- "Publish coverage reports, either within the CI logs or via a badge in the repository README."
+- "Consider external tools (e.g., Codecov, Coveralls) for more detailed analysis."
+
+# 4. Deployment (Optional)
+- "Configure a job to build and upload the package to PyPI or an internal repository upon tagging a release."
+- "Require a README, CHANGELOG, and setup.py/pyproject.toml before publishing."
+- "Document the deployment steps in the README so other collaborators can reproduce the process."
+
+# 5. Branching and Pull Requests
+- "Adopt a named branching strategy (GitFlow or trunk-based) and document it in the README."
+- "Use feature/<description> branches for substantial changes, and request review before merging."
+- "Follow the template for pull requests: include a summary, tests performed, and any relevant screenshots or metrics."
+
+# 6. Communication of Changes
+- "Maintain a CHANGELOG describing new or changed functionality."
+- "List breaking changes or migration steps, if any, after a major release."
+- "Notify the team (Slack, Teams, or email) once a new official version is published."
+
+# 7. Additional References
+- "Consult @GitHubActionsDocs for detailed YAML config samples."
+- "See @SemanticVersioning for clarifications on version numbering."
+- "Reference the ‘Guide to Best Practices for Creating Rules and Prompts in Cursor AI’ (@CursorAI_BestPractices) to keep prompts consistent."

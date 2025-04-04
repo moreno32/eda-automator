@@ -1,0 +1,86 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: "Visualization standards and best practices for the EDA Automator project."
+globs: ["visualization/*.py", "analysis/*.py"]
+alwaysApply: true
+---
+
+# 1. Visualization Architecture
+- "Implement all base plotting functionality in visualization/plotter.py."
+- "Keep style definitions in visualization/styles.py."
+- "Handle data sampling in visualization/samplers.py."
+- "Maintain a clear separation between data preparation and plotting."
+
+# 2. Style and Theming
+- "Use modern color palettes (husl, colorblind-friendly) defined in styles.py."
+- "Implement consistent theming across all visualizations."
+- "Support dark/light mode switching."
+- "Ensure all plots are accessible and readable."
+- "Use appropriate font sizes and styles for different display contexts."
+
+# 3. Plot Types and Usage
+- "Univariate Analysis:"
+  - "Numerical: KDE plots with histograms, enhanced boxplots"
+  - "Categorical: Bar charts with percentage annotations"
+  - "DateTime: Line plots with trend indicators"
+- "Bivariate Analysis:"
+  - "Numeric-Numeric: Scatter plots with regression lines"
+  - "Numeric-Categorical: Box plots, violin plots"
+  - "Categorical-Categorical: Heatmaps, mosaic plots"
+- "Multivariate Analysis:"
+  - "Correlation matrices with significance indicators"
+  - "PCA/dimension reduction visualizations"
+  - "Interactive parallel coordinates"
+
+# 4. Interactive Features
+- "Add tooltips for data point inspection."
+- "Implement zoom and pan capabilities."
+- "Include dynamic filtering options."
+- "Support plot customization through UI controls."
+- "Enable export to various formats."
+
+# 5. Large Dataset Handling
+- "Implement intelligent sampling based on plot type and data size."
+- "Add density-based plotting for large scatter plots."
+- "Use datashading for very large datasets."
+- "Clearly indicate when sampling is applied."
+- "Preserve important features (outliers, trends) in sampled views."
+
+# 6. Performance Optimization
+- "Cache commonly used plot elements."
+- "Implement lazy loading for plot components."
+- "Use vectorized operations for data preparation."
+- "Optimize memory usage for large datasets."
+- "Monitor and limit figure creation."
+
+# 7. Quality Assurance
+- "Add comprehensive tests for all visualization functions."
+- "Include visual regression testing."
+- "Validate plot aesthetics and readability."
+- "Test with various data types and sizes."
+- "Ensure consistent behavior across platforms."
+
+# 8. Documentation
+- "Document all visualization functions with examples."
+- "Include visual guides for plot interpretation."
+- "Provide usage examples for common scenarios."
+- "Maintain style guidelines and best practices."
+- "Document any plot-specific parameters or options."
+
+# 9. Accessibility
+- "Use colorblind-friendly palettes by default."
+- "Include alternative text for plot elements."
+- "Ensure sufficient contrast ratios."
+- "Support screen reader compatibility."
+- "Provide multiple ways to convey information."
+
+# 10. Export and Integration
+- "Support multiple export formats (PNG, SVG, PDF)."
+- "Maintain quality in exported files."
+- "Enable seamless integration with reports."
+- "Include metadata in exported files."
+- "Support batch export operations."

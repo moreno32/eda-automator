@@ -1,0 +1,81 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: "Standards and best practices for implementing analysis functionality in the EDA Automator project."
+globs: ["analysis/*.py"]
+alwaysApply: true
+---
+
+# 1. Analysis Architecture
+- "Implement analysis modules in separate files (univariate.py, bivariate.py, multivariate.py)."
+- "Keep statistical functions in statistics.py."
+- "Place data quality checks in data_quality.py."
+- "Use common interfaces across analysis types."
+
+# 2. Statistical Methods
+- "Document statistical assumptions for each method."
+- "Include references to statistical literature."
+- "Implement appropriate validation checks."
+- "Provide interpretations of statistical results."
+- "Handle edge cases and violations of assumptions."
+
+# 3. Data Quality Analysis
+- "Check for missing values and patterns."
+- "Detect and handle outliers appropriately."
+- "Validate data types and consistency."
+- "Identify duplicate records."
+- "Assess data distribution characteristics."
+
+# 4. Univariate Analysis
+- "Implement appropriate methods for each data type:"
+  - "Numerical: descriptive stats, distribution analysis"
+  - "Categorical: frequency analysis, entropy"
+  - "DateTime: temporal patterns, seasonality"
+- "Include confidence intervals where applicable."
+- "Provide clear interpretations of results."
+
+# 5. Bivariate Analysis
+- "Implement relationship analysis methods:"
+  - "Correlation analysis (Pearson, Spearman, etc.)"
+  - "Chi-square tests for categorical variables"
+  - "ANOVA for categorical-numerical relationships"
+- "Include effect size measurements."
+- "Provide statistical significance levels."
+
+# 6. Multivariate Analysis
+- "Implement dimension reduction techniques (PCA, t-SNE)."
+- "Include clustering analysis methods."
+- "Support feature importance analysis."
+- "Handle high-dimensional data efficiently."
+- "Provide interpretation guidelines."
+
+# 7. Performance Considerations
+- "Optimize computations for large datasets."
+- "Implement efficient sampling strategies."
+- "Use vectorized operations where possible."
+- "Cache intermediate results appropriately."
+- "Monitor memory usage for large computations."
+
+# 8. Result Validation
+- "Implement sanity checks for results."
+- "Validate statistical assumptions."
+- "Include confidence metrics."
+- "Handle numerical stability issues."
+- "Provide warning messages for potential issues."
+
+# 9. Documentation
+- "Document mathematical formulas and methods."
+- "Include examples with interpretation."
+- "Provide references to statistical literature."
+- "Document limitations and assumptions."
+- "Include usage guidelines and best practices."
+
+# 10. Integration
+- "Ensure consistent interfaces across modules."
+- "Provide clear error messages and warnings."
+- "Support progress tracking for long operations."
+- "Enable customization of analysis parameters."
+- "Maintain compatibility with visualization module."

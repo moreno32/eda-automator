@@ -1,0 +1,68 @@
+---
+description: "Core development rules for the EDA Automator project, focusing on architecture, coding standards, and quality assurance."
+globs: ["*.py", "*.ipynb"]
+alwaysApply: true
+---
+
+# 1. Project Structure
+- "Follow the modular architecture with core/, analysis/, visualization/, reporting/, and utils/ directories."
+- "Place all interface code in core/automator.py and configuration in core/config.py."
+- "Keep analysis modules (univariate.py, bivariate.py, multivariate.py) focused on their specific analysis types."
+- "Store all visualization-related code in the visualization/ directory."
+
+# 2. Code Style and Documentation
+- "Follow PEP 8 guidelines with a 100-character line limit."
+- "Use Google-style docstrings for all public functions and classes."
+- "Include type hints for all function parameters and return values."
+- "Add examples in docstrings showing typical usage patterns."
+- "Keep functions focused and under 50 lines; split larger functions into smaller, well-named components."
+
+# 3. Error Handling and Validation
+- "Use structured logging with appropriate levels (DEBUG, INFO, WARNING, ERROR)."
+- "Implement comprehensive input validation in data_handler.py."
+- "Raise specific exceptions with clear error messages and recovery suggestions."
+- "Add debug logging for all major operations to aid troubleshooting."
+
+# 4. Testing and Quality Assurance
+- "Maintain test coverage above 90% for all modules."
+- "Include unit tests for each public function and class method."
+- "Add integration tests for end-to-end workflows."
+- "Test with various data sizes and types, including edge cases."
+- "Use pytest fixtures for common test data and configurations."
+
+# 5. Performance and Optimization
+- "Implement automatic sampling for datasets exceeding sampling_threshold."
+- "Use vectorized operations instead of loops where possible."
+- "Cache intermediate results for expensive operations."
+- "Profile and optimize critical code paths."
+- "Add progress indicators for long-running operations."
+
+# 6. Configuration Management
+- "Define all configurable parameters in core/config.py."
+- "Use type-safe configuration classes with validation."
+- "Provide clear documentation for all configuration options."
+- "Include sensible defaults for all parameters."
+
+# 7. Code Organization
+- "Group related functionality into classes or modules."
+- "Use dependency injection to improve testability."
+- "Keep circular dependencies strictly prohibited."
+- "Maintain a clear separation between analysis and visualization logic."
+
+# 8. Security and Data Handling
+- "Sanitize all file paths and user inputs."
+- "Handle sensitive data appropriately (e.g., PII)."
+- "Implement proper error handling for file operations."
+- "Add appropriate warnings for potentially dangerous operations."
+
+# 9. Documentation Maintenance
+- "Keep API documentation current with code changes."
+- "Document breaking changes in CHANGELOG.md."
+- "Include examples for common use cases."
+- "Maintain up-to-date installation and setup guides."
+
+# 10. Version Control
+- "Write clear, descriptive commit messages."
+- "Keep commits focused and atomic."
+- "Branch for features and bug fixes."
+- "Review code before merging to main."

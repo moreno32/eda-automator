@@ -1,0 +1,55 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+ ---
+description: "Standards and guidelines for CI/CD, testing, and versioning in EDA Automator"
+globs: ["*.py", "*.ipynb", "*.yml"]
+alwaysApply: true
+---
+
+# 1. Testing Standards
+
+- "All modules must have corresponding test files in the tests/ directory."
+- "Each non-trivial function should have at least one test case."
+- "Tests should include both normal cases and edge cases."
+- "Run tests locally with `pytest --cov=eda_automator tests/` before pushing changes."
+- "Maintain minimum 80% test coverage at all times."
+
+# 2. CI/CD Pipeline Integration
+
+- "The CI/CD pipeline automatically runs on each push and PR to main branch."
+- "All linting, testing, and coverage checks must pass before merging."
+- "Consider using pre-commit hooks to run style checks locally before pushing."
+- "Review GitHub Actions workflow logs when CI checks fail."
+
+# 3. Semantic Versioning
+
+- "Follow semantic versioning principles: MAJOR.MINOR.PATCH."
+- "MAJOR version for incompatible API changes."
+- "MINOR version for backward-compatible functionality additions."
+- "PATCH version for backward-compatible bug fixes."
+- "Update version in both `__init__.py` and `pyproject.toml` when releasing."
+
+# 4. Creating Releases
+
+- "Create tags with format 'vX.Y.Z' (e.g., v1.0.0)."
+- "Use annotated tags: `git tag -a vX.Y.Z -m 'Release version X.Y.Z'`."
+- "Push tags explicitly: `git push origin vX.Y.Z`."
+- "The tag should match the version number in the code files."
+- "Update CHANGELOG.md with changes before releasing."
+
+# 5. Code Coverage Requirements
+
+- "Add tests when adding new functionality."
+- "Ensure all branches and edge cases are covered in tests."
+- "Aim for 100% coverage in critical modules like data_quality.py."
+- "Use pytest-cov to measure coverage locally."
+
+# 6. Documentation
+
+- "Update documentation when API changes."
+- "Include examples in docstrings using NumPy style."
+- "README should always reflect current state of project."
+- "Document breaking changes prominently in release notes."
